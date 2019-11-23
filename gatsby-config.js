@@ -1,3 +1,11 @@
+const purgecss = require('@fullhuman/postcss-purgecss')({
+  // Specify the paths to all of the template files in your project
+  content: ['./src/**/*.html', './src/**/*.js'],
+
+  // Include any special characters you're using in this regular expression
+  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+});
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -30,7 +38,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })]
+        postCssPlugins: [
+          require(`postcss-preset-env`)({ stage: 0 }),
+          require('tailwindcss'),
+          ...[purgecss]
+        ]
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
