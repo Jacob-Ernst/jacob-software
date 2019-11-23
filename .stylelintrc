@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-prettier/recommended"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "block-closing-brace-empty-line-before": "never",
+    "block-closing-brace-newline-after": "always",
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "declaration-block-semicolon-newline-after": "always",
+    "indentation": 2,
+    "length-zero-no-unit": true,
+    "max-empty-lines": 1,
+    "no-eol-whitespace": true,
+    "no-missing-end-of-source-newline": true,
+    "order/properties-alphabetical-order": true,
+    "shorthand-property-no-redundant-values": true,
+    "unit-case": "lower",
+    "value-list-comma-newline-after": "always-multi-line",
+    "value-list-comma-space-after": "always-single-line",
+    "value-list-comma-space-before": "never",
+    "value-list-max-empty-lines": 0,
+  },
+  "defaultSeverity": "warning"
+}
