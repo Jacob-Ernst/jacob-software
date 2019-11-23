@@ -31,18 +31,6 @@
             "error",
             "unix"
         ],
-        "quotes": [
-            "error",
-            "single",
-            {
-              "avoidEscape": true,
-              "allowTemplateLiterals": true
-            }
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
         "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
         "react/prop-types": ["off"],
         "react/jsx-no-target-blank": ["off"]
