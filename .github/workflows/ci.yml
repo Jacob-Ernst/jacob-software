@@ -15,7 +15,7 @@ jobs:
       uses: actions/cache@v1
       with:
         path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-node-${{ hashFiles('yarn.lock') }}
     - run: yarn install
       if: steps.modules-cache.outputs.cache-hit == false
     - run: yarn lint:js
