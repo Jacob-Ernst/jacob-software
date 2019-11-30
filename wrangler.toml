@@ -1,7 +1,17 @@
 account_id = "639bf478ca1dd22f9c087ec5003b42b9"
-name = "jacob-software"
+name = "jacob-software-dev"
 type = "webpack"
-zone_id = ""
+workers_dev = true
+
+[env.staging]
+name = "jacob-software-staging"
+route = "staging.jacob.software/*"
+zone_id = "ca5de4ef1b5ee3ee7e7db73fb04b6bd0"
+
+[env.production]
+name = "jacob-software"
+route = "jacob.software/*"
+zone_id = "ca5de4ef1b5ee3ee7e7db73fb04b6bd0"
 
 [site]
 bucket = "./public"
