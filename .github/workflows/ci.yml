@@ -1,8 +1,9 @@
 name: Test
-on: push
-  branches-ignore:
-    - 'origin/master'
-    - 'origin/develop'
+on:
+  push:
+    branches-ignore:
+      - 'origin/master'
+      - 'origin/develop'
 
 jobs:
   lint:
