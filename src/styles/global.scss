@@ -7,7 +7,25 @@
 $font-stack: Helvetica, sans-serif;
 $primary-color: #333;
 
+:root {
+  --theme-background-color: #fff;
+  --theme-text-on-background: #000;
+}
+
 body {
+  color: var(--theme-text-on-background, #000);
   font: 100% $font-stack;
-  color: $primary-color;
+}
+
+html {
+  background-color: var(--theme-background-color, #fff);
+  color: var(--theme-text-on-background, #000);
+  height: 1vw;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-background-color: #2e3131;
+    --theme-text-on-background: #fff;
+  }
 }
