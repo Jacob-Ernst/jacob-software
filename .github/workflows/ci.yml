@@ -2,8 +2,8 @@ name: Test
 on:
   push:
     branches-ignore:
-      - 'origin/master'
-      - 'origin/develop'
+      - '**/master'
+      - '**/develop'
 
 jobs:
   lint:
