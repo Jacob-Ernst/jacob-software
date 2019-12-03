@@ -1,0 +1,26 @@
+name: Deploy Staging
+on:
+  push:
+    branches:
+      - develop
+env:
+  NODE_ENV: production
+  YARN_PRODUCTION: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: yarn install
+    - run: yarn build
+    - name: Publish
+      uses: cloudflare/wrangler-action@1.0.0
+      with:
+        apiKey: ${{ secrets.CF_API_KEY }}
+        email: ${{ secrets.CF_EMAIL }}
+        environment: 'staging'
