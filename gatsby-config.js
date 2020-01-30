@@ -63,7 +63,14 @@ module.exports = {
         accessToken: process.env.PRISMIC_API_TOKEN, // (optional API access token)
         path: '/preview', // (optional preview path. Default: /preview)
         previews: true, // (optional, activated Previews. Default: false)
-        pages: []
+        pages: [
+          {
+            type: 'Blog_post', // TypeName from prismic
+            match: '/blog/:uid', // Pages will be generated under this pattern
+            path: '/blogs', // Placeholder page for unpublished documents
+            component: require.resolve('./src/templates/blogPost.js')
+          }
+        ]
       }
     }
   ]
