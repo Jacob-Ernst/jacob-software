@@ -6,6 +6,8 @@ on:
 env:
   NODE_ENV: production
   YARN_PRODUCTION: true
+  PRISMIC_REPO_NAME: ${{ secrets.PRISMIC_REPO_NAME }}
+  PRISMIC_API_TOKEN: ${{ secrets.PRISMIC_API_TOKEN }}
 
 jobs:
   deploy:
