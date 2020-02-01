@@ -2,31 +2,41 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 /* purgecss end ignore */
-
 @import "tailwindcss/utilities";
+
+@import 'variables';
 
 $font-stack: Helvetica, sans-serif;
 $primary-color: #333;
 
 :root {
   --theme-background-color: #fff;
-  --theme-text-on-background: #000;
+  --theme-text-on-background: #111;
+  --theme-primary-accent: #f012be;
 }
 
 body {
-  color: var(--theme-text-on-background, #000);
+  color: var(--theme-text-on-background, #111);
   font: 100% $font-stack;
 }
 
 html {
   background-color: var(--theme-background-color, #fff);
-  color: var(--theme-text-on-background, #000);
+  color: var(--theme-text-on-background, #111);
   height: 1vw;
+}
+
+.text-fuchsia {
+  color: $fuchsia;
+}
+
+.text-teal {
+  color: $teal;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --theme-background-color: #2e3131;
+    --theme-background-color: #1d1d1d;
     --theme-text-on-background: #fff;
   }
 }
