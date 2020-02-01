@@ -66,7 +66,7 @@ const BlogPost = ({ data }) => {
       <SEO title={doc.node.body1[0].primary.title[0].text} />
       <div>
         {RichText.render(doc.node.title)}
-        <Slices slices={doc.node.body}/>
+        <Slices slices={doc.node.body} />
       </div>
     </Layout>
   );
