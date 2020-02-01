@@ -2,6 +2,10 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { RichText } from 'prismic-reactjs';
 
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Slices from './slices';
+
 export const query = graphql`
   query BlogPostQuery($uid: String) {
     prismic {
@@ -17,17 +21,23 @@ export const query = graphql`
                 primary {
                   text
                 }
+                label
+                type
               }
               ... on PRISMIC_Blog_postBodyQuote {
                 primary {
                   quote
                 }
+                label
+                type
               }
               ... on PRISMIC_Blog_postBodyImage {
                 type
                 primary {
                   image
+                  caption
                 }
+                label
               }
             }
             body1 {
@@ -38,6 +48,8 @@ export const query = graphql`
                 }
               }
             }
+            _linkType
+            release_date
           }
         }
       }
@@ -45,15 +57,18 @@ export const query = graphql`
   }
 `;
 
-const BlogPost = props => {
-  const doc = props.data.prismic.allBlog_posts.edges.slice(0, 1).pop();
+const BlogPost = ({ data }) => {
+  const doc = data.prismic.allBlog_posts.edges.slice(0, 1).pop();
   if (!doc) return null;
 
   return (
-    <div>
-      {RichText.render(doc.node.title)}
-      {RichText.render(doc.node.body[1].primary.text)}
-    </div>
+    <Layout>
+      <SEO title={doc.node.body1[0].primary.title[0].text} />
+      <div>
+        {RichText.render(doc.node.title)}
+        <Slices slices={doc.node.body}/>
+      </div>
+    </Layout>
   );
 };
 

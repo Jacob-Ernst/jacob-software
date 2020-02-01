@@ -67,7 +67,7 @@ module.exports = {
           {
             type: 'Blog_post', // TypeName from prismic
             match: '/blog/:uid', // Pages will be generated under this pattern
-            path: '/blogs', // Placeholder page for unpublished documents
+            path: '/blog-preview', // Placeholder page for unpublished documents
             component: require.resolve('./src/templates/blogPost.js')
           }
         ]
