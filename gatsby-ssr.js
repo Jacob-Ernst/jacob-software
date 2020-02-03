@@ -8,7 +8,7 @@
 
 exports.onPreRenderHTML = function name(
   { getHeadComponents, replaceHeadComponents },
-  pluginOptions
+  _pluginOptions
 ) {
   const oldComponents = getHeadComponents();
   const newHeadComponents = oldComponents.filter(
