@@ -36,6 +36,20 @@ export const query = graphql`
                 primary {
                   image
                   caption
+                  imageSharp {
+                    childImageSharp {
+                      original {
+                        src
+                      }
+                      fluid {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        sizes
+                      }
+                    }
+                  }
                 }
                 label
               }

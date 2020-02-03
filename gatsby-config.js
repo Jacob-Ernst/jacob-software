@@ -20,23 +20,8 @@ module.exports = {
     author: `@gatsbyjs`
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-prismic-graphql',
-
-      options: {
-        repositoryName: process.env.PRISMIC_REPO_NAME, // (REQUIRED, replace with your own)
-        accessToken: process.env.PRISMIC_API_TOKEN, // (optional API access token)
-        previews: false, // (optional, activated Previews. Default: false)
-        pages: [
-          {
-            type: 'Blog_post', // TypeName from prismic
-            match: '/blog/:uid', // Pages will be generated under this pattern
-            path: '/blog-preview', // Placeholder page for unpublished documents
-            component: require.resolve('./src/templates/blogPost.js')
-          }
-        ]
-      }
-    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -45,8 +30,6 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -71,6 +54,24 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-source-prismic-graphql',
+      options: {
+        repositoryName: process.env.PRISMIC_REPO_NAME, // (REQUIRED, replace with your own)
+        accessToken: process.env.PRISMIC_API_TOKEN, // (optional API access token)
+        previews: false, // (optional, activated Previews. Default: false),
+        omitPrismicScript: true,
+        pages: [
+          {
+            type: 'Blog_post', // TypeName from prismic
+            match: '/blog/:uid', // Pages will be generated under this pattern
+            path: '/blog-preview', // Placeholder page for unpublished documents
+            component: require.resolve('./src/templates/blogPost.js')
+          }
+        ],
+        sharpKeys: [/image|photo|picture/]
+      }
+    }
   ]
 };
