@@ -5787,10 +5787,10 @@ gatsby-source-graphql@^2.0.15, gatsby-source-graphql@^2.0.8:
     node-fetch "^1.7.3"
     uuid "^3.3.3"
 
-gatsby-source-prismic-graphql@3.4.0-beta.2:
-  version "3.4.0-beta.2"
-  resolved "https://registry.yarnpkg.com/gatsby-source-prismic-graphql/-/gatsby-source-prismic-graphql-3.4.0-beta.2.tgz#b358a3b1c29ed2efda3bb404b538bc551d320e70"
-  integrity sha512-/zDqgPea2uSKdbBIWYi8Ngypz06zwBdeVlHRCmUnnyfBvV4hyxYTO7dyjTet9BBcb2jaaV7ZxeKew1Y6sc90+w==
+gatsby-source-prismic-graphql@>=3.4.1-alpha:
+  version "3.4.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/gatsby-source-prismic-graphql/-/gatsby-source-prismic-graphql-3.4.1-alpha.0.tgz#314a2893940359a21f9f7992d13ae15d168906a2"
+  integrity sha512-D/BYw/C8HGcs6XK+pkck83gfwgVaqSh6OjbJv1X5qjz5w17dmCF9MoT68WOZMlyFLioADfdu7Ev5WeDEPQxEgw==
   dependencies:
     apollo-boost "^0.3.1"
     apollo-link-context "^1.0.17"

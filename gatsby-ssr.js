@@ -5,3 +5,14 @@
  */
 
 // You can delete this file if you're not using it
+
+exports.onPreRenderHTML = function name(
+  { getHeadComponents, replaceHeadComponents },
+  pluginOptions
+) {
+  const oldComponents = getHeadComponents();
+  const newHeadComponents = oldComponents.filter(
+    item => item.key !== 'prismic-config'
+  );
+  replaceHeadComponents(newHeadComponents);
+};
