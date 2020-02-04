@@ -27,3 +27,4 @@ jobs:
     - run: yarn install
       if: steps.modules-cache.outputs.cache-hit == false
     - run: yarn lint:js
+    - run: yarn lint:css
