@@ -4,6 +4,10 @@ on:
     branches-ignore:
       - master
       - develop
+  pull-request:
+    branches:
+      - master
+      - develop
 
 jobs:
   lint:
