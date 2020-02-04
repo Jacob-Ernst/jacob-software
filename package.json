@@ -47,10 +47,12 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format:js": "yarn run eslint --fix --ext .js src/",
+    "format:js": "eslint --fix --ext .js src/",
+    "format:css": "stylelint --fix 'src/**/*.scss'",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint:js": "yarn run eslint --ext .js src/"
+    "lint:js": "eslint --ext .js src/",
+    "lint:css": "stylelint 'src/**/*.scss'"
   }
 }
