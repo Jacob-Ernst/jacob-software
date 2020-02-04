@@ -2,8 +2,12 @@ name: Test
 on:
   push:
     branches-ignore:
-      - '**/master'
-      - '**/develop'
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
 
 jobs:
   lint:
