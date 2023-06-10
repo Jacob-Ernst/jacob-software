@@ -6,7 +6,7 @@
   "author": "Jacob Ernst <akumadude.je@gmail.com>",
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.0.5",
-    "gatsby": "^2.17.6",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^2.2.30",
     "gatsby-plugin-manifest": "^2.2.25",
     "gatsby-plugin-offline": "^3.0.17",
